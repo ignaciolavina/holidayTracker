@@ -9,6 +9,7 @@ import ResetPage from '@/features/auth/ResetPage';
 import InvitePage from '@/features/auth/InvitePage';
 import DashboardPage from '@/features/dashboard/DashboardPage';
 import RequestPage from '@/features/requests/RequestPage';
+import RequestDetailPage from '@/features/requests/RequestDetailPage';
 import CalendarPage from '@/features/calendar/CalendarPage';
 import TeamPage from '@/features/team/TeamPage';
 import ProfilePage from '@/features/profile/ProfilePage';
@@ -38,6 +39,7 @@ export function App() {
           <Route element={<RequireAuth />}>
             <Route index element={<DashboardPage />} />
             <Route path="requests/new" element={<RequestPage />} />
+            <Route path="requests/:id" element={<RequestDetailPage />} />
             <Route path="calendar" element={<CalendarPage />} />
             <Route path="calendar/:userId" element={<CalendarPage />} />
             <Route path="team" element={<TeamPage />} />

@@ -1,0 +1,142 @@
+[
+  {
+    "date": "2026-01-01",
+    "name": "Año Nuevo",
+    "scope": "national"
+  },
+  {
+    "date": "2026-01-06",
+    "name": "Día de Reyes / Epifanía del Señor",
+    "scope": "national"
+  },
+  {
+    "date": "2026-04-02",
+    "name": "Jueves Santo",
+    "scope": "regional"
+  },
+  {
+    "date": "2026-04-03",
+    "name": "Viernes Santo",
+    "scope": "national"
+  },
+  {
+    "date": "2026-05-01",
+    "name": "Fiesta del trabajo",
+    "scope": "national"
+  },
+  {
+    "date": "2026-05-02",
+    "name": "Fiesta de la Comunidad de Madrid",
+    "scope": "regional"
+  },
+  {
+    "date": "2026-05-15",
+    "name": "San Isidro",
+    "scope": "local"
+  },
+  {
+    "date": "2026-08-15",
+    "name": "Asunción",
+    "scope": "national"
+  },
+  {
+    "date": "2026-10-12",
+    "name": "Fiesta Nacional de España",
+    "scope": "national"
+  },
+  {
+    "date": "2026-11-01",
+    "name": "Día de todos los Santos",
+    "scope": "national"
+  },
+  {
+    "date": "2026-11-09",
+    "name": "Nuestra Señora de la Almudena",
+    "scope": "local"
+  },
+  {
+    "date": "2026-12-06",
+    "name": "Día de la Constitución",
+    "scope": "national"
+  },
+  {
+    "date": "2026-12-08",
+    "name": "Inmaculada Concepción",
+    "scope": "national"
+  },
+  {
+    "date": "2026-12-25",
+    "name": "Navidad",
+    "scope": "national"
+  },
+  {
+    "date": "2027-01-01",
+    "name": "Año Nuevo",
+    "scope": "national"
+  },
+  {
+    "date": "2027-01-06",
+    "name": "Día de Reyes / Epifanía del Señor",
+    "scope": "national"
+  },
+  {
+    "date": "2027-03-25",
+    "name": "Jueves Santo",
+    "scope": "regional"
+  },
+  {
+    "date": "2027-03-26",
+    "name": "Viernes Santo",
+    "scope": "national"
+  },
+  {
+    "date": "2027-05-01",
+    "name": "Fiesta del trabajo",
+    "scope": "national"
+  },
+  {
+    "date": "2027-05-02",
+    "name": "Fiesta de la Comunidad de Madrid",
+    "scope": "regional"
+  },
+  {
+    "date": "2027-05-15",
+    "name": "San Isidro",
+    "scope": "local"
+  },
+  {
+    "date": "2027-08-15",
+    "name": "Asunción",
+    "scope": "national"
+  },
+  {
+    "date": "2027-10-12",
+    "name": "Fiesta Nacional de España",
+    "scope": "national"
+  },
+  {
+    "date": "2027-11-01",
+    "name": "Día de todos los Santos",
+    "scope": "national"
+  },
+  {
+    "date": "2027-11-09",
+    "name": "Nuestra Señora de la Almudena",
+    "scope": "local"
+  },
+  {
+    "date": "2027-12-06",
+    "name": "Día de la Constitución",
+    "scope": "national"
+  },
+  {
+    "date": "2027-12-08",
+    "name": "Inmaculada Concepción",
+    "scope": "national"
+  },
+  {
+    "date": "2027-12-25",
+    "name": "Navidad",
+    "scope": "national"
+  }
+]
