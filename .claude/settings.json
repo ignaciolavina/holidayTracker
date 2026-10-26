@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Read", "Edit", "Write", "Glob", "Grep",
+      "Bash(npm:*)", "Bash(npx:*)", "Bash(node:*)", "Bash(tsc:*)",
+      "Bash(git init:*)", "Bash(git add:*)", "Bash(git commit:*)", "Bash(git status:*)",
+      "Bash(git diff:*)", "Bash(git log:*)", "Bash(git checkout:*)", "Bash(git branch:*)",
+      "Bash(git restore:*)", "Bash(git stash:*)", "Bash(git rev-parse:*)", "Bash(git show:*)",
+      "Bash(mkdir:*)", "Bash(ls:*)", "Bash(cat:*)", "Bash(cp:*)", "Bash(mv:*)", "Bash(touch:*)",
+      "Bash(rm:*)", "Bash(find:*)", "Bash(grep:*)", "Bash(sed:*)", "Bash(head:*)", "Bash(tail:*)",
+      "Bash(wc:*)", "Bash(echo:*)", "Bash(pwd)", "Bash(which:*)", "Bash(sort:*)", "Bash(diff:*)",
+      "Bash(lsof:*)", "Bash(kill:*)", "Bash(pkill:*)", "Bash(sleep:*)", "Bash(curl:*)",
+      "WebFetch(domain:date.nager.at)", "WebFetch(domain:www.npmjs.com)", "WebFetch(domain:code.claude.com)"
+    ],
+    "deny": [
+      "Bash(git push:*)", "Bash(git remote:*)", "Bash(railway:*)", "Bash(sudo:*)", "Bash(brew:*)",
+      "Bash(npm install -g:*)", "Bash(npm i -g:*)", "Bash(npm publish:*)", "Bash(npm login:*)"
+    ]
+  }
+}

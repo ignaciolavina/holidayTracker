@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+.env
+server/tmp
+test-results
+playwright-report
+*.log
+.DS_Store
