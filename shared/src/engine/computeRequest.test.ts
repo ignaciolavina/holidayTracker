@@ -199,6 +199,18 @@ describe('computeRequest (SPEC-06)', () => {
     expect(oct.totalUnits).toBe(6);
   });
 
+  it('modo lenient (recalcular existentes): no falla si todo pasa a festivo', () => {
+    const r = computeRequest({
+      startDate: '2026-05-01',
+      endDate: '2026-05-01',
+      halfDay: { date: '2026-05-01', period: 'AM' },
+      holidays: [H('2026-05-01')],
+      lenient: true,
+    });
+    expect(r.totalUnits).toBe(0);
+    expect(r.days[0]).toEqual({ date: '2026-05-01', units: 0, reason: 'holiday-national' });
+  });
+
   it('weekendDays configurable', () => {
     const r = computeRequest({ startDate: '2026-03-06', endDate: '2026-03-07', holidays: [], weekendDays: [5] });
     expect(r.days[0]!.units).toBe(0);

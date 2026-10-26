@@ -19,6 +19,11 @@ export interface ComputeInput {
   holidays: EngineHoliday[];
   /** 0 = domingo … 6 = sábado */
   weekendDays?: number[];
+  /**
+   * Recalcular solicitudes ya existentes (p. ej. al cambiar un festivo): no falla si el medio día deja de ser
+   * computable ni si el total queda en 0.
+   */
+  lenient?: boolean;
 }
 
 export interface ComputedDay {
@@ -115,11 +120,11 @@ export function computeRequest(input: ComputeInput): Computation {
     }
   }
 
-  if (halfDay) {
+  if (halfDay && !input.lenient) {
     const d = days.find((x) => x.date === halfDay.date)!;
     if (d.units === 0) throw new EngineError('HALF_DAY_NOT_COMPUTABLE');
   }
-  if (totalUnits === 0) throw new EngineError('NOTHING_TO_COMPUTE');
+  if (totalUnits === 0 && !input.lenient) throw new EngineError('NOTHING_TO_COMPUTE');
 
   return { days, totalUnits, calendarDays: range.length, weekendCount, holidayCount };
 }
