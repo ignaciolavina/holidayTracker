@@ -32,7 +32,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const login = useCallback(
     async (email: string, password: string) => {
       const res = await api.post<{ user: Me }>('/auth/login', { email, password });
-      qc.clear();
+      // No se usa qc.clear(): desmontaría la consulta 'me' que observa este provider y el usuario no se vería hasta recargar.
+      qc.removeQueries({ predicate: (q) => q.queryKey[0] !== 'me' });
       qc.setQueryData(['me'], res.user);
       return res.user;
     },
@@ -42,7 +43,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await api.post('/auth/logout');
     } finally {
-      qc.clear();
+      qc.removeQueries({ predicate: (q) => q.queryKey[0] !== 'me' });
       qc.setQueryData(['me'], null);
     }
   }, [qc]);
