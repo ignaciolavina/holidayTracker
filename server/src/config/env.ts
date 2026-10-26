@@ -12,6 +12,9 @@ const isTest = nodeEnv === 'test' || !!process.env.VITEST;
 if (isProd && !process.env.JWT_SECRET) {
   throw new Error('JWT_SECRET es obligatorio en producción');
 }
+if (isProd && !process.env.MONGODB_URI) {
+  throw new Error('MONGODB_URI es obligatorio en producción (replica set para transacciones)');
+}
 
 export const env = {
   nodeEnv,
