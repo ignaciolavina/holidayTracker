@@ -36,7 +36,7 @@ export function Layout() {
           data-testid={`nav-${id}`}
           onClick={() => setOpen(false)}
           className={({ isActive }) =>
-            cn('flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent', isActive && 'bg-accent text-accent-foreground')
+            cn('flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white', isActive && 'bg-white/15 text-white shadow-[inset_3px_0_0_0_#fff]')
           }
         >
           <Icon className="h-4 w-4" aria-hidden /> {label}
@@ -48,7 +48,7 @@ export function Layout() {
           data-testid="nav-admin"
           onClick={() => setOpen(false)}
           className={({ isActive }) =>
-            cn('flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent', isActive && 'bg-accent text-accent-foreground')
+            cn('flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white', isActive && 'bg-white/15 text-white shadow-[inset_3px_0_0_0_#fff]')
           }
         >
           <ShieldCheck className="h-4 w-4" aria-hidden /> Administración
@@ -60,19 +60,28 @@ export function Layout() {
   return (
     <TooltipProvider delayDuration={150}>
       <div className="min-h-screen md:grid md:grid-cols-[14rem_1fr]">
-        <aside className="hidden border-r bg-card md:block">
-          <Link to="/" className="flex h-14 items-center gap-2 px-5 text-lg font-bold">
-            <CalendarDays className="h-5 w-5 text-primary" aria-hidden /> holidayTracker
+        <aside className="bg-brand-gradient sticky top-0 hidden h-screen flex-col text-white md:flex">
+          <Link to="/" className="flex h-16 items-center gap-3 px-5">
+            <span className="brand-mark"><CalendarDays className="h-5 w-5" aria-hidden /></span>
+            <span className="leading-tight">
+              <span className="block text-base font-semibold">holidayTracker</span>
+              <span className="block text-[10px] font-medium uppercase tracking-[0.18em] text-white/60">Bemycar</span>
+            </span>
           </Link>
-          {links}
+          <div className="mx-4 border-t border-white/15" />
+          <div className="flex-1">{links}</div>
+          <p className="px-5 py-4 text-[11px] text-white/50">© Bemycar · Gestión de vacaciones</p>
         </aside>
         {open && (
           <div className="fixed inset-0 z-40 md:hidden" role="dialog" aria-modal="true" aria-label="Menú">
             <button aria-label="Cerrar menú" className="absolute inset-0 bg-black/50" onClick={() => setOpen(false)} />
-            <div className="relative h-full w-64 bg-card shadow-lg">
-              <div className="flex h-14 items-center justify-between px-4">
-                <span className="font-bold">holidayTracker</span>
-                <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={() => setOpen(false)}>
+            <div className="bg-brand-gradient relative h-full w-64 text-white shadow-lg">
+              <div className="flex h-16 items-center justify-between px-4">
+                <span className="flex items-center gap-3">
+                  <span className="brand-mark"><CalendarDays className="h-5 w-5" aria-hidden /></span>
+                  <span className="font-semibold">holidayTracker</span>
+                </span>
+                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white" aria-label="Cerrar" onClick={() => setOpen(false)}>
                   <X className="h-5 w-5" />
                 </Button>
               </div>
@@ -81,10 +90,13 @@ export function Layout() {
           </div>
         )}
         <div className="flex min-w-0 flex-col">
-          <header className="sticky top-0 z-30 flex h-14 items-center gap-2 border-b bg-background/95 px-3 backdrop-blur sm:px-5">
+          <header className="sticky top-0 z-30 flex h-16 items-center gap-2 border-b bg-card/95 px-3 shadow-[0_1px_0_0_hsl(var(--border))] backdrop-blur sm:px-6">
             <Button variant="ghost" size="icon" className="md:hidden" aria-label="Abrir menú" data-testid="menu-toggle" onClick={() => setOpen(true)}>
               <Menu className="h-5 w-5" />
             </Button>
+            <span className="flex items-center gap-2 font-semibold text-brand md:hidden">
+              <CalendarDays className="h-5 w-5" aria-hidden /> holidayTracker
+            </span>
             <div className="flex-1" />
             <NotificationBell />
             <Button variant="ghost" size="icon" onClick={toggle} aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'} data-testid="theme-toggle">
@@ -115,7 +127,7 @@ export function Layout() {
               </DropdownMenuContent>
             </DropdownMenu>
           </header>
-          <main className="mx-auto w-full max-w-6xl flex-1 p-3 sm:p-5">
+          <main className="mx-auto w-full max-w-6xl flex-1 p-3 sm:p-6">
             <Outlet />
           </main>
         </div>

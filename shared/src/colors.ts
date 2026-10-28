@@ -17,8 +17,8 @@ export const COLOR_TOKENS = {
   approved: {
     key: 'approved',
     label: 'Vacaciones aprobadas',
-    light: { bg: '#2563eb', fg: '#ffffff', border: '#1d4ed8' },
-    dark: { bg: '#3b82f6', fg: '#0b1220', border: '#60a5fa' },
+    light: { bg: '#5A1294', fg: '#ffffff', border: '#430d6f' },
+    dark: { bg: '#a46ad6', fg: '#1a0530', border: '#c49be6' },
     marker: 'solid',
     icon: '✓',
   },
@@ -33,8 +33,8 @@ export const COLOR_TOKENS = {
   pending: {
     key: 'pending',
     label: 'Pendiente de aprobar',
-    light: { bg: '#dbeafe', fg: '#1e3a8a', border: '#2563eb' },
-    dark: { bg: '#1e293b', fg: '#bfdbfe', border: '#60a5fa' },
+    light: { bg: '#f1e8fa', fg: '#3b0b63', border: '#5A1294' },
+    dark: { bg: '#2a1540', fg: '#e3cdf7', border: '#a46ad6' },
     marker: 'striped',
     icon: '⏳',
   },
@@ -49,8 +49,8 @@ export const COLOR_TOKENS = {
   halfDay: {
     key: 'halfDay',
     label: 'Medio día',
-    light: { bg: '#2563eb', fg: '#ffffff', border: '#1d4ed8' },
-    dark: { bg: '#3b82f6', fg: '#0b1220', border: '#60a5fa' },
+    light: { bg: '#5A1294', fg: '#ffffff', border: '#430d6f' },
+    dark: { bg: '#a46ad6', fg: '#1a0530', border: '#c49be6' },
     marker: 'diagonal',
     icon: '◐',
   },
@@ -81,15 +81,15 @@ export const COLOR_TOKENS = {
   weekend: {
     key: 'weekend',
     label: 'Fin de semana',
-    light: { bg: '#f1f5f9', fg: '#94a3b8', border: '#e2e8f0' },
-    dark: { bg: '#0f172a', fg: '#475569', border: '#1e293b' },
+    light: { bg: '#f5f2f8', fg: '#a59cb0', border: '#e9e3ef' },
+    dark: { bg: '#130b1c', fg: '#5e5269', border: '#24182f' },
     marker: 'dimmed',
   },
   today: {
     key: 'today',
     label: 'Hoy',
-    light: { bg: 'transparent', fg: '#0f172a', border: '#7c3aed' },
-    dark: { bg: 'transparent', fg: '#f8fafc', border: '#a78bfa' },
+    light: { bg: 'transparent', fg: '#1a0530', border: '#f59e0b' },
+    dark: { bg: 'transparent', fg: '#f8fafc', border: '#fbbf24' },
     marker: 'ring',
   },
   negative: {

@@ -5,14 +5,15 @@ import { BIRTHDAY_STATUS_LABEL, days, daysLabel, fmtDate } from '@/lib/format';
 import { today } from '@/lib/today';
 import { cn } from '@/lib/utils';
 
-function Kpi({ id, title, value, children, style, className }: { id: string; title: string; value: ReactNode; children?: ReactNode; style?: React.CSSProperties; className?: string }) {
+function Kpi({ id, title, value, children, style, className, brand }: { id: string; title: string; value: ReactNode; children?: ReactNode; style?: React.CSSProperties; className?: string; brand?: boolean }) {
+  const sub = brand ? 'text-white/75' : 'text-muted-foreground';
   return (
-    <Card className={cn('p-4', className)} style={style} data-testid={`kpi-${id}`}>
-      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{title}</p>
+    <Card className={cn('p-4', brand && 'bg-brand-gradient border-0 text-white shadow-md', className)} style={style} data-testid={`kpi-${id}`}>
+      <p className={cn('text-xs font-medium uppercase tracking-wide', sub)}>{title}</p>
       <p className="mt-1 text-3xl font-bold tabular-nums" data-testid={`kpi-${id}-value`}>
         {value}
       </p>
-      <div className="mt-1 space-y-0.5 text-xs text-muted-foreground">{children}</div>
+      <div className={cn('mt-1 space-y-0.5 text-xs', sub)}>{children}</div>
     </Card>
   );
 }
@@ -25,7 +26,7 @@ export function KpiCards({ balance: b }: { balance: BalanceDto }) {
   const bd = b.birthday;
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3" data-testid="kpis">
-      <Kpi id="available" title={`Disponibles ${b.year}`} value={days(b.available.current)}>
+      <Kpi id="available" brand title={`Disponibles ${b.year}`} value={days(b.available.current)}>
         <p>de {days(b.entitlementUnits)} días del año</p>
         {b.reserved.current > 0 && <p>{days(b.reserved.current)} reservados por pendientes</p>}
       </Kpi>

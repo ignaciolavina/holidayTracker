@@ -4,52 +4,59 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    /* Bemycar: morado corporativo #5A1294 = hsl(273 78% 33%) */
+    --brand: 273 78% 33%;
+    --brand-dark: 273 80% 21%;
+    --brand-soft: 273 70% 96%;
+    --background: 270 33% 99%;
+    --foreground: 272 45% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 272 45% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 221 83% 53%;
+    --popover-foreground: 272 45% 11%;
+    --primary: 273 78% 33%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 40%;
-    --accent: 210 40% 94%;
-    --accent-foreground: 222 47% 11%;
+    --secondary: 273 45% 95%;
+    --secondary-foreground: 273 70% 22%;
+    --muted: 270 25% 96%;
+    --muted-foreground: 270 12% 40%;
+    --accent: 273 65% 95%;
+    --accent-foreground: 273 78% 26%;
     --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
     --warning: 38 92% 90%;
     --warning-foreground: 30 80% 22%;
-    --border: 214 32% 88%;
-    --input: 214 32% 82%;
-    --ring: 221 83% 53%;
-    --radius: 0.6rem;
+    --border: 270 22% 89%;
+    --input: 270 20% 83%;
+    --ring: 273 78% 33%;
+    --radius: 0.65rem;
     color-scheme: light;
   }
   .dark {
-    --background: 222 47% 7%;
-    --foreground: 210 40% 96%;
-    --card: 222 40% 10%;
-    --card-foreground: 210 40% 96%;
-    --popover: 222 40% 10%;
-    --popover-foreground: 210 40% 96%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 9%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 96%;
-    --muted: 217 33% 15%;
-    --muted-foreground: 215 20% 70%;
-    --accent: 217 33% 18%;
-    --accent-foreground: 210 40% 96%;
+    --brand: 273 78% 33%;
+    --brand-dark: 273 80% 16%;
+    --brand-soft: 273 35% 16%;
+    --background: 272 40% 6%;
+    --foreground: 270 30% 95%;
+    --card: 272 35% 9%;
+    --card-foreground: 270 30% 95%;
+    --popover: 272 35% 9%;
+    --popover-foreground: 270 30% 95%;
+    --primary: 273 62% 70%;
+    --primary-foreground: 273 80% 10%;
+    --secondary: 272 30% 16%;
+    --secondary-foreground: 270 30% 95%;
+    --muted: 272 28% 14%;
+    --muted-foreground: 270 15% 70%;
+    --accent: 273 35% 19%;
+    --accent-foreground: 270 30% 96%;
     --destructive: 0 75% 60%;
-    --destructive-foreground: 222 47% 9%;
+    --destructive-foreground: 272 45% 9%;
     --warning: 35 70% 16%;
     --warning-foreground: 38 92% 85%;
-    --border: 217 33% 20%;
-    --input: 217 33% 26%;
-    --ring: 217 91% 60%;
+    --border: 272 25% 19%;
+    --input: 272 25% 25%;
+    --ring: 273 62% 70%;
     color-scheme: dark;
   }
   * {
@@ -57,6 +64,20 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  h1, h2, h3 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  /* Superficies de marca (barra lateral, pantallas de acceso) */
+  .bg-brand-gradient {
+    background-image: linear-gradient(160deg, hsl(var(--brand)) 0%, hsl(var(--brand-dark)) 100%);
+  }
+  .brand-mark {
+    @apply flex h-8 w-8 items-center justify-center rounded-lg bg-white text-brand shadow-sm;
   }
 }
